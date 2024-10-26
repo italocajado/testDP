@@ -25,7 +25,8 @@ def createUser():
 
 @app.route('/users/<id>', methods=['PUT'])
 def updateUser(id):
-    data = request.json
+    data = request.get_json()
+    data.pop("_id")
     result = collection.update_one({'_id': ObjectId(id)}, {'$set': data})
     if result.modified_count == 0:
         abort(404)
