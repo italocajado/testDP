@@ -39,17 +39,17 @@
         this.user = response.data;
       },
       openEditModal() {
-        this.showModal = true; // Abre o modal
+        this.showModal = true;
       },
       async confirmDelete() {
         if (confirm(`Are you sure you want to delete ${this.user.username}?`)) {
           await axios.delete(`http://localhost:5000/users/${this.user._id}`);
-          this.$router.push('/'); // Redireciona para a lista de usuários após a exclusão
+          this.$router.push('/');
         }
       },
       closeModal() {
-        this.showModal = false; // Fecha o modal
-        this.fetchUser(); // Atualiza as informações do usuário
+        this.showModal = false;
+        this.fetchUser();
       },
     },
   };

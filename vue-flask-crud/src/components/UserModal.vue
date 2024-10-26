@@ -37,14 +37,12 @@ export default {
       console.log('Save button clicked');
       try {
         if (this.user) {
-          // Editar usuário existente
           await axios.put(`/users/${this.user._id}`, this.form);
         } else {
-          // Criar um novo usuário
           await axios.post('/users', this.form);
         }
-        this.$emit('close'); // Fecha o modal após salvar
-        this.$emit('update:showDialog', false); // Atualiza o estado do dialog
+        this.$emit('close');
+        this.$emit('update:showDialog', false);
       } catch (error) {
         console.error('Error saving user:', error);
       }

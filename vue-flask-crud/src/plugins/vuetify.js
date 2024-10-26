@@ -1,7 +1,6 @@
-// src/plugins/vuetify.js
-import 'vuetify/styles'; // Importa os estilos globais do Vuetify
+import 'vuetify/styles';
 import { createVuetify } from 'vuetify';
-import { mdi } from 'vuetify/iconsets/mdi'; // Ícones Material Design
+import { mdi } from 'vuetify/iconsets/mdi';
 
 export default createVuetify({
   icons: {
